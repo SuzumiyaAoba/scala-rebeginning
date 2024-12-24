@@ -1,4 +1,4 @@
-val scala3Version = "3.5.2"
+val scala3Version = "3.3.4"
 
 lazy val root = project
   .in(file("."))
@@ -8,5 +8,9 @@ lazy val root = project
 
     scalaVersion := scala3Version,
 
-    libraryDependencies += "org.scalameta" %% "munit" % "1.0.0" % Test
+    libraryDependencies ++= List(
+      "org.typelevel" %% "cats-core" % "2.12.0",
+      "org.typelevel" %% "kittens" % "3.4.0",
+      "org.scalameta" %% "munit" % "1.0.3" % Test,
+    )
   )
